@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kurela Campus Ambassador Program</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#07111f;
+color:white;
+overflow-x:hidden;
+}
+
+.container{
+width:90%;
+max-width:1300px;
+margin:auto;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+background:
+linear-gradient(
+135deg,
+#07111f 0%,
+#0f172a 50%,
+#111827 100%
+);
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:#2563eb;
+filter:blur(180px);
+opacity:.25;
+top:-100px;
+left:-100px;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:400px;
+height:400px;
+background:#10b981;
+filter:blur(180px);
+opacity:.15;
+bottom:-100px;
+right:-100px;
+}
+
+.hero-content{
+position:relative;
+z-index:10;
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.05);
+border-radius:50px;
+font-size:14px;
+margin-bottom:25px;
+backdrop-filter:blur(10px);
+}
+
+.hero h1{
+font-size:4rem;
+font-weight:800;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero h1 span{
+background:linear-gradient(to right,#3b82f6,#10b981);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:850px;
+margin:auto;
+font-size:1.15rem;
+color:#cbd5e1;
+line-height:1.8;
+}
+
+.buttons{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 30px;
+border:none;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.primary{
+background:#2563eb;
+color:white;
+}
+
+.primary:hover{
+transform:translateY(-4px);
+}
+
+.secondary{
+background:rgba(255,255,255,.08);
+color:white;
+border:1px solid rgba(255,255,255,.15);
+}
+
+.section{
+padding:100px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:2.8rem;
+margin-bottom:15px;
+}
+
+.section-title p{
+color:#94a3b8;
+max-width:700px;
+margin:auto;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(20px);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#2563eb;
+}
+
+.card h3{
+margin-bottom:15px;
+}
+
+.card p{
+color:#cbd5e1;
+line-height:1.7;
+}
+
+.process{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.step{
+width:220px;
+padding:25px;
+text-align:center;
+background:#111827;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.step-number{
+width:60px;
+height:60px;
+margin:auto;
+border-radius:50%;
+background:#2563eb;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table th{
+background:#1e293b;
+padding:16px;
+}
+
+table td{
+padding:16px;
+border-bottom:1px solid rgba(255,255,255,.08);
+text-align:center;
+}
+
+.level-card{
+padding:30px;
+background:#111827;
+border-radius:20px;
+}
+
+.level-card h3{
+margin-bottom:20px;
+}
+
+.level-card ul{
+padding-left:20px;
+line-height:2;
+color:#cbd5e1;
+}
+
+.cta{
+padding:120px 0;
+text-align:center;
+background:
+linear-gradient(
+135deg,
+#1e3a8a,
+#2563eb,
+#10b981
+);
+}
+
+.cta h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.cta p{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+font-size:1.1rem;
+}
+
+footer{
+padding:30px;
+text-align:center;
+color:#94a3b8;
+background:#050b16;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.7rem;
+}
+
+.section-title h2{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<div class="hero-content container">
+
+<div class="badge">
+🚀 Kurela Cognisive Campus Growth Program
+</div>
+
+<h1>
+Become A <span>Campus Leader</span><br>
+Through Impact, Not Titles
+</h1>
+
+<p>
+At Kurela Cognisive, everyone starts as a Student Advocate.
+Promote our free courses, affordable premium programs,
+internships, workshops and events. Earn points based on
+your impact and climb the leaderboard to become the
+official Campus Ambassador of your institution.
+</p>
+
+<div class="buttons">
+<button class="btn primary">Join Program</button>
+<button class="btn secondary">View Leaderboard</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="section-title">
+<h2>How The Program Works</h2>
+<p>
+Ambassador positions are earned through performance,
+leadership and community engagement.
+</p>
+</div>
+
+<div class="process">
+
+<div class="step">
+<div class="step-number">1</div>
+<h3>Register</h3>
+<p>Become a Kurela Student Advocate.</p>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<h3>Get Referral Link</h3>
+<p>Receive your unique tracking code.</p>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<h3>Promote</h3>
+<p>Share courses, events and opportunities.</p>
+</div>
+
+<div class="step">
+<div class="step-number">4</div>
+<h3>Earn Points</h3>
+<p>Gain points based on impact.</p>
+</div>
+
+<div class="step">
+<div class="step-number">5</div>
+<h3>Become Ambassador</h3>
+<p>Top performers represent their college.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="section-title">
+<h2>Points System</h2>
+<p>Every contribution helps you move up the leaderboard.</p>
+</div>
+
+<table>
+
+<tr>
+<th>Activity</th>
+<th>Points</th>
+</tr>
+
+<tr>
+<td>Free Course Registration</td>
+<td>+5</td>
+</tr>
+
+<tr>
+<td>Course Completion</td>
+<td>+10</td>
+</tr>
+
+<tr>
+<td>Event Registration</td>
+<td>+10</td>
+</tr>
+
+<tr>
+<td>Internship Referral</td>
+<td>+25</td>
+</tr>
+
+<tr>
+<td>Paid Course Enrollment</td>
+<td>+50</td>
+</tr>
+
+<tr>
+<td>Website Visit Generated</td>
+<td>+1</td>
+</tr>
+
+<tr>
+<td>Social Media Engagement</td>
+<td>+2</td>
+</tr>
+
+<tr>
+<td>Community Member Added</td>
+<td>+5</td>
+</tr>
+
+</table>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="section-title">
+<h2>Ambassador Levels</h2>
+</div>
+
+<div class="grid">
+
+<div class="level-card">
+<h3>🥉 Student Influencer</h3>
+<ul>
+<li>Community Recognition</li>
+<li>Skill Development Sessions</li>
+<li>Participation Certificates</li>
+</ul>
+</div>
+
+<div class="level-card">
+<h3>🥈 Silver Ambassador</h3>
+<ul>
+<li>Official Recognition</li>
+<li>Premium Course Access</li>
+<li>Leadership Opportunities</li>
+</ul>
+</div>
+
+<div class="level-card">
+<h3>🥇 Gold Ambassador</h3>
+<ul>
+<li>Official College Representative</li>
+<li>Priority Internship Access</li>
+<li>Featured On Kurela Platforms</li>
+<li>Exclusive Rewards</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="section-title">
+<h2>Monthly Rewards</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>100+ Points</h3>
+<p>Certificate + LinkedIn Recognition</p>
+</div>
+
+<div class="card">
+<h3>300+ Points</h3>
+<p>Premium Course Access + Internship Priority</p>
+</div>
+
+<div class="card">
+<h3>500+ Points</h3>
+<p>Cash Rewards + Leadership Recognition</p>
+</div>
+
+<div class="card">
+<h3>1000+ Points</h3>
+<p>Elite Ambassador Status + Mentorship</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="section-title">
+<h2>College Leaderboard</h2>
+<p>
+Colleges compete against each other. The more active your
+campus, the higher your institution ranks.
+</p>
+</div>
+
+<table>
+
+<tr>
+<th>Rank</th>
+<th>College</th>
+<th>Points</th>
+</tr>
+
+<tr>
+<td>#1</td>
+<td>Your College</td>
+<td>12,450</td>
+</tr>
+
+<tr>
+<td>#2</td>
+<td>Your College</td>
+<td>11,820</td>
+</tr>
+
+<tr>
+<td>#3</td>
+<td>Your College</td>
+<td>10,990</td>
+</tr>
+
+</table>
+
+</div>
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Ready To Represent Your Campus?</h2>
+
+<p>
+Join thousands of students building their personal brand,
+earning rewards and creating impact while helping their
+college connect with industry opportunities.
+</p>
+
+<br><br>
+
+<button class="btn primary">
+Apply Now
+</button>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Kurela Cognisive Pvt. Ltd. All Rights Reserved.
+</footer>
+
+</body>
+</html>
